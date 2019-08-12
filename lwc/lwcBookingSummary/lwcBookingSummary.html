@@ -1,0 +1,67 @@
+<template>
+    <div class="slds-scope">
+        <div class="slds-grid slds-p-around_medium ">
+                                                <!-- LEFT (HOTEL SUMMARY) -->
+            <div class="slds-media slds-col slds-size_1-of-2 slds-box slds-theme_shade">
+                <div class="slds-media__body slds-col slds-size_2-of-3">
+                    <p class="slds-text-heading_medium"> 
+                        <lightning-formatted-text value={hotel.Name} ></lightning-formatted-text>
+                    </p>
+                    <p class="slds-text-body_small">
+                        Address: {hotel.Address__c}, {hotel.City__c}
+                    </p>
+                    <p class="slds-text-body_small">
+                        <lightning-formatted-text value={Phone}></lightning-formatted-text>
+                        <lightning-formatted-phone value={hotel.Phone__c}></lightning-formatted-phone>
+                    </p>
+                    <p class="slds-text-body_small">
+                        E-mail:
+                        <lightning-formatted-email value={hotel.Email__c}></lightning-formatted-email>
+                    </p>
+                    <p class="slds-text-body_small">
+                        Website: 
+                        <lightning-formatted-text value={hotel.Website__c}></lightning-formatted-text>
+                    </p>
+                </div>
+                <div class="slds-media__figure slds-col slds-size_1-of-3">
+                    <lightning-formatted-rich-text value={hotel.Photo__c}></lightning-formatted-rich-text>
+                </div>
+            </div>
+                                                <!-- /LEFT (HOTEL SUMMARY) -->
+                                                <!-- RIGHT(ROOM SUMMARY) -->
+            <div class="slds-media slds-col slds-size_1-of-2 slds-box slds-theme_shade">
+                <div class="slds-media__figure slds-col slds-size_1-of-3">
+                    <lightning-formatted-rich-text value={room.Photo__c}></lightning-formatted-rich-text>
+                </div>    
+                <div class="slds-media__body slds-col slds-size_2-of-3">
+                    <p class="slds-text-heading_medium">
+                        Room no.
+                        <lightning-formatted-text value={room.Name}></lightning-formatted-text>
+                    </p>
+                    <p class="slds-text-body_small">
+                        Single beds:
+                        {room.single_beds__c}
+                        <lightning-formatted-text value={room.Single_Beds__c}></lightning-formatted-text>
+                    </p>
+                    <p class="slds-text-body_small">
+                        Double beds:
+                        <lightning-formatted-text value={room.Double_Beds__c}></lightning-formatted-text>
+                    </p>
+                    <p class="slds-text-body_small">
+                        Price for night:
+                        <lightning-formatted-number value={room.Price_for_Night__c} currency-code="EUR" minimum-fraction-digits="2" maximum-fraction-digits="2" format-style="currency"></lightning-formatted-number>
+                    </p>
+                </div>
+            </div>
+                                                <!-- /RIGHT(ROOM SUMMARY) -->
+        </div>
+                                                <!-- BOTTOM(USER DATA) -->
+                                                
+        <div class="slds-grid slds-p-around_medium">
+            <div class="slds-col">
+                <c-lwc-guest-booking></c-lwc-guest-booking>
+            </div>
+        </div>
+                                                <!-- /BOTTOM(USER DATA) -->
+    </div>   
+</template>

@@ -27,7 +27,7 @@
                                                 <!-- /LEFT (FILTERS) -->
                                                 <!-- CENTER (ROOMS) -->
             <div class="slds-col slds-size_5-of-6 slds-box slds-theme_shade">
-                <c-lwc-hotel-rooms-list hotel-id={hotelId} check-in-date={checkInDate} check-out-date={checkOutDate} people-in-room={peopleInRoom} max-price={maxPrice} is-executive={isExecutive} ></c-lwc-hotel-rooms-list>
+                <c-lwc-hotel-rooms-list onroomselected={sendRoomToMenu} hotel-id={hotelId} check-in-date={checkInDate} check-out-date={checkOutDate} people-in-room={peopleInRoom} max-price={maxPrice} is-executive={isExecutive} ></c-lwc-hotel-rooms-list>
             </div>
                                                 <!-- /CENTER (ROOMS) -->
 

@@ -80,4 +80,13 @@ export default class LwcSearchRooms extends LightningElement {
             this.totalDays = this.checkOutDate - this.checkInDate;
         }
     }
+
+    sendRoomToMenu(event) {
+        let selectedRoom = event.detail;
+
+        const roomEvent = new CustomEvent('roomselected', {
+            detail: selectedRoom
+        });
+        this.dispatchEvent(roomEvent);
+    }
 }

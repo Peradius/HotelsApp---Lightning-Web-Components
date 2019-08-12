@@ -1,0 +1,60 @@
+<template>
+    <div class="slds-scope">
+        <div class="slds-grid slds-p-around_medium">
+            <div class="slds-col slds-theme_shade">
+                <div class="slds-grid slds-p-around_medium slds-box">
+                    <!-- LEFT(TOGGLE) -->
+                    <div class="slds-col slds-size_1-of-4 slds-box">
+                        <lightning-input type="toggle" label="I already have an account"
+                        aura-id="accountToggle" checked={hasAccountToggle} required onchange={switchToggle}></lightning-input>
+                    </div>
+                    <!-- /LEFT(TOGGLE) -->
+                    <!-- RIGHT(FORM) -->
+                    <div class="slds-col slds-size_3-of-4 slds-box">
+                        <!-- User has an account -->
+                        <div if:true={hasAccountToggle}>
+                            <form class="slds-form--stacked"> 
+                                <lightning-input label="Enter email" value={email} required onchange={updateEmail}></lightning-input>
+                                <lightning-button label="Submit" onclick={submitEmail} variant="brand"></lightning-button>
+                            </form>
+                            <div if:true={emailNotFound}>
+                                <div style="color: red; font: 15px">
+                                        Email wasn't found! Try again or create a new account!
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /User has an account -->
+
+                        <!-- User has no account -->
+                        <div if:false={hasAccountToggle}>
+                            <lightning-record-form
+                                    object-api-name={guestObject}
+                                    fields={guestFields}
+                                    onsuccess={submitNewGuest}> 
+                                <!-- <lightning-input aura-id="guestform" label="First Name" 
+                                                value={newGuest.First_Name__c} required>
+                                </lightning-input>
+                    
+                                <lightning-input aura-id="guestform" label="Last Name" 
+                                                value={newGuest.Last_Name__c} required>
+                                </lightning-input>
+                    
+                                <lightning-input aura-id="guestform" type="tel" label="Telephone" 
+                                                value={newGuest.Phone__c}>
+                                </lightning-input>
+                    
+                                <lightning-input aura-id="guestform" type="email" label="E-Mail" 
+                                                value={newGuest.Email__c} required>
+                                </lightning-input>
+                    
+                                <lightning-button label="Submit" onclick={submitNewGuest} variant="brand"></lightning-button> -->
+                            </lightning-record-form>
+                        </div>
+                        <!-- /User has no account -->                    
+                    </div>
+                    <!-- /RIGHT(FORM) -->
+                </div>
+            </div>
+        </div>
+    </div>  
+</template>

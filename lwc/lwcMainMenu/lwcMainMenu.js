@@ -8,11 +8,22 @@ export default class LwcMainMenu extends LightningElement {
     @track pageFourOpened = false;
 
     @track hotel;
+    @track room;
 
     handleHotelSelection(event) {
         this.pageOneOpened = false;
         this.pageTwoOpened = true;
 
         this.hotel = event.detail;
+    }
+
+    handleRoomSelection(event) {
+        this.pageTwoOpened = false;
+        this.pageThreeOpened = true;
+
+        this.room = event.detail;
+
+        console.log(this.hotel.Name);
+        console.log(this.room.Name);
     }
 }

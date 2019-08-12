@@ -6,14 +6,12 @@ export default class Lwc_searchHotels extends LightningElement {
     @track cityVal;
 
     handleHotelFilters(event) {
-        console.log('Received rating: ' + event.detail.rating);
-        console.log('Received city: ' + event.detail.city);
         this.minimumRatingVal = event.detail.rating;
         this.cityVal = event.detail.city;
     }
 
     sendHotelToMenu(event) {
-        const selectedHotel = event.detail;
+        let selectedHotel = event.detail;
         const hotelsEvent = new CustomEvent('hotelselected', {
             detail: selectedHotel
         });

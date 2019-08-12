@@ -23,6 +23,12 @@
             ],
             "c/lwcFilterBar": [
                 "lwcFilterBar/lwcFilterBar.js"
+            ],
+            "c/lwcBookingSummary": [
+                "lwcBookingSummary/lwcBookingSummary.js"
+            ],
+            "c/lwcGuestBooking": [
+                "lwcGuestBooking/lwcGuestBooking.js"
             ]
         }
     },

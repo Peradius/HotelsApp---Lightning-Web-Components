@@ -26,7 +26,11 @@ export default class LwcHotelRoomsList extends LightningElement {
     }
 
     bookThisRoom(event) {
-        console.log('Booked room ' + event.target.value);
-        console.log(this.totalDays);
+        let selectedRoom = event.target.value;
+
+        const roomEvent = new CustomEvent('roomselected', {
+            detail: selectedRoom
+        });
+        this.dispatchEvent(roomEvent);
     }
 }

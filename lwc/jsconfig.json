@@ -8,6 +8,12 @@
             ],
             "c/lwcSearchHotels": [
                 "lwcSearchHotels/lwcSearchHotels.js"
+            ],
+            "c/lwcMainMenu": [
+                "lwcMainMenu/lwcMainMenu.js"
+            ],
+            "c/lwcSearchRooms": [
+                "lwcSearchRooms/lwcSearchRooms.js"
             ]
         }
     },

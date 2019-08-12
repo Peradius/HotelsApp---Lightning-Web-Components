@@ -27,6 +27,14 @@ export default class Lwc_searchHotels extends LightningElement {
 
         // this.sendHotelFiltersEvent(this.minimumRating, this.city);
     }
+    
+    sendHotelToMenu(event) {
+        const selectedHotel = event.detail;
+        const hotelsEvent = new CustomEvent('hotelselected', {
+            detail: selectedHotel
+        });
+        this.dispatchEvent(hotelsEvent);
+    }
 
     // sendHotelFiltersEvent(minimumRating, city) {
     //     const filtersEvent = new CustomEvent('hotel', {

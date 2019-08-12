@@ -25,7 +25,7 @@
                                                     <!-- /LEFT (FILTERS) -->
                                                     <!-- CENTER (HOTELS) -->
                 <div class="slds-col slds-size_5-of-6 slds-box slds-theme_shade">
-                    <c-lwc-hotel-dropdown-list city={cityVal} rating={minimumRatingVal}></c-lwc-hotel-dropdown-list>
+                    <c-lwc-hotel-dropdown-list onhotelselected={sendHotelToMenu} city={cityVal} rating={minimumRatingVal}></c-lwc-hotel-dropdown-list>
                 </div>
                                                     <!-- /CENTER (HOTELS) -->
             </div>

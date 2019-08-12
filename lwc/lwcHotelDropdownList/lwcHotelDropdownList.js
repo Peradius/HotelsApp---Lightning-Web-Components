@@ -20,16 +20,24 @@ export default class LwcHotelDropdownList extends LightningElement {
     }
     
     connectedCallback() {
-        console.log('tralaal');
+        // Set initial values of the filters
         this.rating = 1;
         this.city = null;
     }
     
     updateFilters(event) {
-        console.log('Hello');
         this.rating = event.rating;
         this.city = event.city;
         console.log(this.rating);
         console.log(this.city);
+    }
+
+    selectHotel(event) {
+        let selectedHotel = event.target.value;
+
+        const hotelsEvent = new CustomEvent('hotelselected', {
+            detail: selectedHotel
+        });
+        this.dispatchEvent(hotelsEvent);
     }
 }

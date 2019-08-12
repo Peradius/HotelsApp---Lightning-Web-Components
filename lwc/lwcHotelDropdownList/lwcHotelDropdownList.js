@@ -11,6 +11,7 @@ export default class LwcHotelDropdownList extends LightningElement {
     wiredHotels({error, data}) {
         if(error) {
             this.error = error;
+            this.hotels = null;
             console.log('Error receiving');
             console.log(error);
         } else if(data) {

@@ -6,21 +6,7 @@
             <div class="slds-grid slds-p-around_medium">
                                                     <!-- LEFT (FILTERS) -->
                 <div class="slds-col slds-size_1-of-6 slds-box slds-theme_shade">
-                    <!-- <c:hotelFilterBar /> -->
-                
-                    <lightning-input type="number" label="Minimum rating"
-                                     max="5" min="1" onchange={handleRatingChange}
-                                     name="minimumRating" value={minimumRating}>
-                    </lightning-input>
-                    <hr></hr>
-                    <lightning-input type="text" label="City" 
-                                     onchange={handleCityChange} 
-                                     name="minimumRating" value={city}>
-                    </lightning-input>
-                
-                    <p class="slds-align_absolute-center slds-align-bottom slds-m-top--large">
-                        <lightning-button label="Filter" title="Filter" onclick={filterClicked} variant="brand"></lightning-button>
-                    </p>
+                    <c-lwc-hotel-filter-bar onhotelfilters={handleHotelFilters}></c-lwc-hotel-filter-bar>
                 </div>
                                                     <!-- /LEFT (FILTERS) -->
                                                     <!-- CENTER (HOTELS) -->

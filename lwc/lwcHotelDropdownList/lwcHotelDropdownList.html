@@ -1,0 +1,55 @@
+<template>
+    <template for:each={hotels} for:item="hotel">
+        <div key={hotel.Id} class="slds-grid">
+                                                    <!-- IMAGE AND INFO -->
+            <div  class="slds-media slds-col slds-box slds-size_5-of-6">
+                <div class="slds-media__figure slds-col slds-size_1-of-3 ">
+                    <lightning-formatted-rich-text value={hotel.Photo__c}></lightning-formatted-rich-text>
+                </div>
+                <div class="slds-media__body slds-col slds-size_2-of-3 ">
+                    <p>
+                        <lightning-formatted-text value={hotel.Name}></lightning-formatted-text>
+                    </p>
+
+                    <p>
+                        Address
+                        <lightning-formatted-text value={hotel.Address__c}></lightning-formatted-text>,
+                        <lightning-formatted-text value={hotel.City__c}></lightning-formatted-text>
+                    </p>
+
+                    <p> 
+                        Phone:
+                        <lightning-formatted-phone value={hotel.Phone__c} ></lightning-formatted-phone>
+                    </p>
+
+                    <p> 
+                        E-mail:
+                        <lightning-formatted-email value={hotel.Email__c}></lightning-formatted-email>
+                    </p>
+                    
+                    <p> 
+                        Website:
+                        <lightning-formatted-url value={hotel.Website__c}></lightning-formatted-url> 
+                    </p>
+                </div>
+            </div>
+                                                        <!-- /IMAGE AND INFO -->
+                                                        <!-- RATING AND BUTTON -->
+            <div class="slds-col slds-box slds-size_1-of-6">
+                <div class="slds-media slds-col slds-grow slds-theme_shade ">
+                    <div class="slds-media__body slds-align_absolute-center">
+                        <h1 class="slds-text-heading_large">{hotel.Rating__c}</h1>
+                    </div>
+                    <div class="slds-media__figure slds-align_left">
+                        <lightning-icon icon-name="utility:favorite" size="medium" alternative-text="Star"></lightning-icon>
+                    </div>
+                </div>
+
+                <p class="slds-m-around_large slds-align_absolute-center">
+                    <lightning-button variant="brand" label="Select" onclick={selectHotel} value={hotel}></lightning-button> 
+                </p>
+            </div>
+        </div>
+                                                    <!-- /RATING AND BUTTON -->
+    </template>       
+</template>

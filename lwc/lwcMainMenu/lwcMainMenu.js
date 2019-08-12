@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, track } from 'lwc';
 
 export default class LwcMainMenu extends LightningElement {
     @track pageOneOpened = true;
@@ -10,8 +10,9 @@ export default class LwcMainMenu extends LightningElement {
     @track hotel;
 
     handleHotelSelection(event) {
-        this.hotel = event.detail;
+        this.pageOneOpened = false;
         this.pageTwoOpened = true;
-        console.log('Retrieved ' + this.hotel);
+
+        this.hotel = event.detail;
     }
 }

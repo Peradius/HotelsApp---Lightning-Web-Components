@@ -17,6 +17,12 @@
             ],
             "c/lwcHotelFilterBar": [
                 "lwcHotelFilterBar/lwcHotelFilterBar.js"
+            ],
+            "c/lwcHotelRoomsList": [
+                "lwcHotelRoomsList/lwcHotelRoomsList.js"
+            ],
+            "c/lwcFilterBar": [
+                "lwcFilterBar/lwcFilterBar.js"
             ]
         }
     },

@@ -1,0 +1,10 @@
+<template>
+    <!-- <aura:registerEvent name="updateSearchFilters" type="c:searchFilters" /> -->
+
+    <lightning-input type="number" label="Maximum price per night" value={maximumPrice} onchange={updateMaximumPrice}></lightning-input>
+    <hr></hr>
+    <lightning-input type="checkbox" label="Executive room" value={isExecutive} onchange={updateIsExecutive}></lightning-input>
+    <p class="slds-align_absolute-center slds-m-top--large">
+        <lightning-button label="Filter" title="Filter" onclick={filterClicked} variant="brand"></lightning-button>
+    </p>
+</template>

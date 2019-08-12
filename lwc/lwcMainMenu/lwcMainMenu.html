@@ -3,7 +3,7 @@
         <c-lwc-search-hotels onhotelselected={handleHotelSelection}></c-lwc-search-hotels>
     </div>
     <div if:true={pageTwoOpened}>
-        <c-lwc-search-rooms hotel={hotel}></c-lwc-search-rooms>
+        <c-lwc-search-rooms hotel-id={hotel.Id}></c-lwc-search-rooms>
     </div>
     <!-- <div if:true={pageThreeOpened}>
         <c-lwc-search-hotels></c-lwc-search-hotels>

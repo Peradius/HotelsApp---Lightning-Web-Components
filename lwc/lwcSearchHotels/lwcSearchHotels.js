@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
-import { LightningElement, api, track} from 'lwc';
+import { LightningElement, track} from 'lwc';
 
 export default class Lwc_searchHotels extends LightningElement {
-
     @track minimumRatingVal = 1;
     @track cityVal;
 

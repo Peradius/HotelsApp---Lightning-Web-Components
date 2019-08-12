@@ -1,3 +1,36 @@
 <template>
-    Hotel: {hotel.Name}
+    <div class="slds-scope">
+                                                <!-- CENTER (FILTERS) -->
+        <div class="slds-grid slds-p-around_medium">
+            <div class="slds-col slds-grid slds-box slds-theme_shade"> 
+                <div class="slds-col">
+                    <lightning-input type="date" value={checkInDate} label="Check-In Date" placeholder="Check-In Date" required onchange={updateCheckInDate}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-input type="date" value={checkOutDate} label="Check-Out Date" placeholder="Check-Out Date" required onchange={updateCheckOutDate}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-input type="number" value={peopleInRoom} label="People in the room" min="1" step="1" required onchange={updatePeopleInRoom}></lightning-input>
+                </div>
+            </div>
+        </div>
+        <div class="slds-text-color_error slds-p-left_x-small">
+                {errorMessage}
+        </div>
+                                                <!-- /CENTER (FILTERS) -->
+
+        <div class="slds-grid slds-p-around_medium">
+                                                <!-- LEFT (FILTERS) -->
+            <div class="slds-col slds-size_1-of-6 slds-box slds-theme_shade">
+                <c-lwc-filter-bar onroomfilters={handleRoomFilters}></c-lwc-filter-bar>
+            </div>
+                                                <!-- /LEFT (FILTERS) -->
+                                                <!-- CENTER (ROOMS) -->
+            <div class="slds-col slds-size_5-of-6 slds-box slds-theme_shade">
+                <c-lwc-hotel-rooms-list hotel-id={hotelId} check-in-date={checkInDate} check-out-date={checkOutDate} people-in-room={peopleInRoom} max-price={maxPrice} is-executive={isExecutive} ></c-lwc-hotel-rooms-list>
+            </div>
+                                                <!-- /CENTER (ROOMS) -->
+
+        </div>
+    </div>
 </template>

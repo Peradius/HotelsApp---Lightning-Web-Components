@@ -32,6 +32,21 @@
             ],
             "c/lwcSummaryPopup": [
                 "lwcSummaryPopup/lwcSummaryPopup.js"
+            ],
+            "c/lwcHotelApplication": [
+                "lwcHotelApplication/lwcHotelApplication.js"
+            ],
+            "c/lwcUserMenu": [
+                "lwcUserMenu/lwcUserMenu.js"
+            ],
+            "c/lwcHotelHeader": [
+                "lwcHotelHeader/lwcHotelHeader.js"
+            ],
+            "c/lwcUserInteractions": [
+                "lwcUserInteractions/lwcUserInteractions.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
             ]
         }
     },

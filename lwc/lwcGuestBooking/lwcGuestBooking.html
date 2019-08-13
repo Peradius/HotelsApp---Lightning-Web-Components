@@ -27,28 +27,23 @@
 
                         <!-- User has no account -->
                         <div if:false={hasAccountToggle}>
-                            <lightning-record-form
-                                    object-api-name={guestObject}
-                                    fields={guestFields}
-                                    onsuccess={submitNewGuest}> 
-                                <!-- <lightning-input aura-id="guestform" label="First Name" 
-                                                value={newGuest.First_Name__c} required>
-                                </lightning-input>
-                    
-                                <lightning-input aura-id="guestform" label="Last Name" 
-                                                value={newGuest.Last_Name__c} required>
-                                </lightning-input>
-                    
-                                <lightning-input aura-id="guestform" type="tel" label="Telephone" 
-                                                value={newGuest.Phone__c}>
-                                </lightning-input>
-                    
-                                <lightning-input aura-id="guestform" type="email" label="E-Mail" 
-                                                value={newGuest.Email__c} required>
-                                </lightning-input>
-                    
-                                <lightning-button label="Submit" onclick={submitNewGuest} variant="brand"></lightning-button> -->
-                            </lightning-record-form>
+                            <lightning-input label="First Name" 
+                                            value={newGuestFirstName} required>
+                            </lightning-input>
+                
+                            <lightning-input label="Last Name" 
+                                            value={newGuestLastName} required>
+                            </lightning-input>
+                
+                            <lightning-input type="tel" label="Telephone" 
+                                            value={newGuestPhone}>
+                            </lightning-input>
+                
+                            <lightning-input type="email" label="E-Mail" 
+                                            value={newGuestEmail} required>
+                            </lightning-input>
+                
+                            <lightning-button label="Submit" onclick={submitNewGuest} variant="brand"></lightning-button>
                         </div>
                         <!-- /User has no account -->                    
                     </div>

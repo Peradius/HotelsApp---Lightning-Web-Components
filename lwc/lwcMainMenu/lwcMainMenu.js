@@ -40,4 +40,9 @@ export default class LwcMainMenu extends LightningElement {
         this.pageThreeOpened = false;
         this.pageFourOpened = true;
     }
+
+    handleReturnToMainPage() {
+        this.pageOneOpened = true;
+        this.pageFourOpened = false;
+    }
 }

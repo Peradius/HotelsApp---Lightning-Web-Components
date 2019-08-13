@@ -9,6 +9,6 @@
         <c-lwc-booking-summary onshowsummarypopup={handleShowSummaryPopup} hotel={hotel} room={room}></c-lwc-booking-summary>
     </div>
     <div if:true={pageFourOpened}>
-        <c-lwc-summary-popup hotel={hotel} room={room} guest={guest} check-in={checkIn} check-out={checkOut} total-price={totalPrice}></c-lwc-summary-popup>
+        <c-lwc-summary-popup onreturnmainpage={handleReturnToMainPage} hotel={hotel} room={room} guest={guest} check-in={checkIn} check-out={checkOut} total-price={totalPrice}></c-lwc-summary-popup>
     </div>
 </template>

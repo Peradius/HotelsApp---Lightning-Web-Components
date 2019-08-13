@@ -59,6 +59,9 @@
             ],
             "c/lwcShowBillingData": [
                 "lwcShowBillingData/lwcShowBillingData.js"
+            ],
+            "c/lwcChangeUserDataModal": [
+                "lwcChangeUserDataModal/lwcChangeUserDataModal.js"
             ]
         }
     },

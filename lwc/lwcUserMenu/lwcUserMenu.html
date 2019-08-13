@@ -1,14 +1,14 @@
 <template>
     <template if:false={loggedIn}>
 		<c-lwc-guest-booking onshowsummarypopup={handleLogin}></c-lwc-guest-booking>
-		<template if:true={loggedIn} >
-			<div class="slds-scope">
-				<div class="slds-grid slds-p-around_medium slds-text-heading_large ">
-					<div class="slds-box slds-col slds-theme_shade">
-						<p style="color: crimson">Hi {guest.First_Name__c}! </p>
-					</div>
+    </template>
+	<template if:true={loggedIn}>
+		<div class="slds-scope">
+			<div class="slds-grid slds-p-around_medium slds-text-heading_large ">
+				<div class="slds-box slds-col slds-theme_shade">
+					<p style="color: crimson">Hi {guest.First_Name__c}! </p>
 				</div>
-
+			</div>
 								<!-- USER ACCOUNT DETAILS -->
 			<template if:false={showBillingPage}>
 				<div class="slds-m-around_medium">
@@ -33,7 +33,6 @@
 				<c-lwc-show-billing-data reservations={reservations}></c-lwc-show-billing-data>
             </template>
 				<!-- /USER BILLING -->
-			</div>
-		</template>
+		</div>		 
 	</template>
 </template>

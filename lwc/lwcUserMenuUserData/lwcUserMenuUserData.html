@@ -1,3 +1,37 @@
 <template>
-    
+    <p class="slds-text-heading_large">
+        Your Data
+    </p>
+    <hr></hr>
+        <p class="slds-text-body_regular">
+            First Name: 
+            <lightning-formatted-text value={guest.First_Name__c}></lightning-formatted-text>
+        </p>
+        <p class="slds-text-body-regular">
+            Last Name:
+            <lightning-formatted-text value={guest.Last_Name__c}></lightning-formatted-text>
+        </p>
+        <p class="slds-text-body_regular">
+            Phone: 
+            <lightning-formatted-text value={guest.Phone__c}></lightning-formatted-text>
+        </p>
+        <p class="slds-text-body_regular">
+            Email:
+            <lightning-formatted-text value={guest.Email__c}></lightning-formatted-text>
+        </p>
+    <template if:true={showUserChangeData}>
+        <c-lwc-change-user-data-modal guest={guest}></c-lwc-change-user-data-modal>
+    </template>
+    <hr></hr>
+    <div class="slds-grid">
+        <div class="slds-col slds-align-left slds-align-bottom">
+            <lightning-button label="Change User Data" title="Change user data" onclick={changeUserData}></lightning-button>
+        </div>
+        <div class="slds-col slds-align-left slds-align-bottom">
+            <lightning-button label="Show billing" title="Show billing" onclick={showBilling}></lightning-button>
+        </div>
+        <div class="slds-col slds-align-right slds-align-bottom">
+            <lightning-button label="Logout" title="Logout" onclick={logout} disabled></lightning-button>
+        </div>
+    </div>
 </template>

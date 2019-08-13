@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { LightningElement, api, wire, track } from 'lwc';
-import getHotels from '@salesforce/apex/HotelDropdownListController.getHotels';
+import getHotels from '@salesforce/apex/LwcHotelDropdownListController.getHotels';
 
 export default class LwcHotelDropdownList extends LightningElement {
     @track hotels = [];

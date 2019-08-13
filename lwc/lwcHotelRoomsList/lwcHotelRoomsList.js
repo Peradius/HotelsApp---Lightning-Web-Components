@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { LightningElement, api, track, wire } from 'lwc';
-import getRooms from '@salesforce/apex/HotelRoomsListController.getRooms';
+import getRooms from '@salesforce/apex/LwcHotelRoomsListController.getRooms';
 
 export default class LwcHotelRoomsList extends LightningElement {
     @api hotelId;

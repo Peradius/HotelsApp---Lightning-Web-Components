@@ -14,7 +14,7 @@
                         <!-- User has an account -->
                         <div if:true={hasAccountToggle}>
                             <form class="slds-form--stacked"> 
-                                <lightning-input label="Enter email" value={email} required onchange={updateEmail}></lightning-input>
+                                <lightning-input label="Enter email" value={email} required onchange={changeEmailToFind}></lightning-input>
                                 <lightning-button label="Submit" onclick={submitEmail} variant="brand"></lightning-button>
                             </form>
                             <div if:true={emailNotFound}>
@@ -27,20 +27,20 @@
 
                         <!-- User has no account -->
                         <div if:false={hasAccountToggle}>
-                            <lightning-input label="First Name" 
-                                            value={newGuestFirstName} required>
+                            <lightning-input label="First Name" value={newGuestFirstName} 
+                                             onchange={changeFirstName} required>
                             </lightning-input>
                 
-                            <lightning-input label="Last Name" 
-                                            value={newGuestLastName} required>
+                            <lightning-input label="Last Name" value={newGuestLastName}
+                                             onchange={changeLastName} required>
                             </lightning-input>
                 
                             <lightning-input type="tel" label="Telephone" 
-                                            value={newGuestPhone}>
+                                             onchange={changePhone} value={newGuestPhone}>
                             </lightning-input>
                 
-                            <lightning-input type="email" label="E-Mail" 
-                                            value={newGuestEmail} required>
+                            <lightning-input type="email" label="E-Mail" onchange={changeEmail}
+                                             value={newGuestEmail} required>
                             </lightning-input>
                 
                             <lightning-button label="Submit" onclick={submitNewGuest} variant="brand"></lightning-button>

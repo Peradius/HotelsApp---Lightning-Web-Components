@@ -1,37 +1,22 @@
 /* eslint-disable no-console */
-import { LightningElement, track, wire } from 'lwc';
-import findEmail from '@salesforce/apex/GuestBookingController.findEmail';
+import { LightningElement, track} from 'lwc';
+import findEmail from '@salesforce/apex/LwcGuestBookingController.findEmail';
+import createGuest from '@salesforce/apex/LwcGuestBookingController.createGuest'
 
 export default class LwcGuestBooking extends LightningElement { 
-    email;
-    @track emailVal;
-    @track guest;
-
     @track newGuestFirstName;
     @track newGuestLastName;
     @track newGuestPhone;
     @track newGuestEmail;
     
+    @track guest;
     @track hasAccountToggle = false;
     @track emailNotFound = false;
 
-    @wire(findEmail, {email : '$emailVal'})
-    wiredEmail({error, data}) {
-        if(error) {
-            this.error = error;
-            console.log("Email " + this.emailVal + " not found!");
-            console.log(error);
-            this.emailNotFound = true;
-        } else if(data) {
-            console.log("Email found!");
-            this.guest = data;
-            this.emailNotFound = false;
-            this.showSummaryPopup();
-        }
-    }
+    emailToFind;
 
-    updateEmail(event) {
-        this.email = event.target.value;
+    changeEmailToFind(event) {
+        this.emailToFind = event.target.value;
     }
 
     switchToggle() {
@@ -39,15 +24,39 @@ export default class LwcGuestBooking extends LightningElement {
     }
 
     submitEmail() {
-        this.emailVal = this.email;
+        findEmail({
+            email: this.emailToFind
+        })
+        .then(result => {
+            console.log("Email found!");
+            this.guest = result;
+            this.emailNotFound = false;
+            this.showSummaryPopup();
+        })
+        .catch(error => {
+            this.error = error;
+            console.log("Email " + this.emailToFind + " not found!");
+            console.log(error);
+            this.emailNotFound = true;
+        })
     }
 
-    submitNewGuest(event) {
-        console.log('newGuest name: ' + this.newGuest.First_Name__c);
-        // console.log('Guest inserted');
-        // let guest = event.target.value;
-        // console.log(guest);
-        // console.log(guest.First_Name__c);
+    submitNewGuest() {
+        createGuest({
+            firstName: this.newGuestFirstName,
+            lastName: this.newGuestLastName,
+            phone: this.newGuestPhone,
+            email: this.newGuestEmail
+        })
+        .then(result => {
+            console.log("Success inserting a new guest!");
+            this.guest = result;
+            this.showSummaryPopup();
+        })
+        .catch(error => {
+            console.log("Error inserting a new guest!");
+            console.log(error);
+        })
     }
 
     showSummaryPopup() {
@@ -55,6 +64,22 @@ export default class LwcGuestBooking extends LightningElement {
             detail: this.guest
         });
         this.dispatchEvent(summaryPopupEvent);
+    }
+
+    changeFirstName(event) {
+        this.newGuestFirstName = event.target.value;
+    }
+
+    changeLastName(event) {
+        this.newGuestLastName = event.target.value;
+    }
+
+    changePhone(event) {
+        this.newGuestPhone = event.target.value;
+    }
+
+    changeEmail(event) {
+        this.newGuestEmail = event.target.value;
     }
 
 }

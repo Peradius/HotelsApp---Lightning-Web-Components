@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-console */
 import { LightningElement, api } from 'lwc';
-import createReservation from '@salesforce/apex/SummaryPopupController.createReservation';
+import createReservation from '@salesforce/apex/LwcSummaryPopupController.createReservation';
 
 export default class LwcSummaryPopup extends LightningElement {
     @api hotel;

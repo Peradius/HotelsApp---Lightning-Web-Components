@@ -1,3 +1,33 @@
 <template>
-    
+    <div class="slds-scope">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__content slds-p-around_medium slds-grid">
+                                                        <!-- FORM -->
+                    <form class="slds-form--stacked">
+                            <lightning-input label="First Name" value={firstName} 
+                                            onchange={changeFirstName} required>
+                            </lightning-input>
+                
+                            <lightning-input label="Last Name" value={lastName}
+                                             onchange={changeLastName} required>
+                            </lightning-input>
+                
+                            <lightning-input type="tel" label="Telephone" 
+                                             onchange={changePhone} value={phone}>
+                            </lightning-input>
+                
+                            <lightning-input type="email" label="E-Mail"
+                                             value={guest.Email__c} disabled>
+                            </lightning-input>
+                    </form>
+                                                        <!-- FORM -->
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={cancel}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={confirm}>Confirm</button>
+                </footer>
+            </div>
+        </section>
+    </div>
 </template>

@@ -12,4 +12,8 @@ export default class LwcUserMenuUserData extends LightningElement {
     showBilling() {
         console.log('show billing');
     }
+
+    closeModal() {
+        this.showUserChangeData = false;
+    }
 }

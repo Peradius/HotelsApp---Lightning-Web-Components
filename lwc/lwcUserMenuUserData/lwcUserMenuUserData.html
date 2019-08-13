@@ -20,7 +20,7 @@
             <lightning-formatted-text value={guest.Email__c}></lightning-formatted-text>
         </p>
     <template if:true={showUserChangeData}>
-        <c-lwc-change-user-data-modal guest={guest}></c-lwc-change-user-data-modal>
+        <c-lwc-change-user-data-modal onclosemodal={closeModal} guest={guest}></c-lwc-change-user-data-modal>
     </template>
     <hr></hr>
     <div class="slds-grid">

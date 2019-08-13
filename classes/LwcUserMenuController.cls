@@ -10,4 +10,15 @@ public with sharing class LwcUserMenuController {
         }
         return null;
     }
+
+    @AuraEnabled
+    public static Guest__c updateGuest(Guest__c guest, String firstName, String lastName, String phone){
+        guest.First_Name__c = firstName;
+        guest.Last_Name__c = lastName;
+        guest.Phone__c = phone;
+        
+        update guest;
+        System.debug('Guest updated!');
+        return guest;
+    }
 }

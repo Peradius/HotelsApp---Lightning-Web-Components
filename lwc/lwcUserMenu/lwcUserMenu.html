@@ -1,3 +1,39 @@
 <template>
-    123
+    <template if:false={loggedIn}>
+		<c-lwc-guest-booking onshowsummarypopup={handleLogin}></c-lwc-guest-booking>
+		<template if:true={loggedIn} >
+			<div class="slds-scope">
+				<div class="slds-grid slds-p-around_medium slds-text-heading_large ">
+					<div class="slds-box slds-col slds-theme_shade">
+						<p style="color: crimson">Hi {guest.First_Name__c}! </p>
+					</div>
+				</div>
+
+								<!-- USER ACCOUNT DETAILS -->
+			<template if:false={showBillingPage}>
+				<div class="slds-m-around_medium">
+					<div class="slds-grid">
+						<div class="slds-col slds-box slds-size--1-of-3 slds-theme_shade">
+							<c-lwc-user-menu-user-data guest={guest}></c-lwc-user-menu-user-data>
+						</div>
+						<div class="slds-col slds-box slds-size--2-of-3 slds-theme_shade">
+							<c-lwc-user-menu-reservations reservations={reservations}></c-lwc-user-menu-reservations>
+						</div>
+					</div>
+																					<!-- RESERVATION DETAILS -->
+					<template if:true={showReservationDetails}>
+						<c-lwc-user-menu-hotel-services></c-lwc-user-menu-hotel-services>
+                    </template>
+																					<!-- /RESERVATION DETAILS -->
+				</div>
+			</template>
+				<!-- USER ACCOUNT DETAILS -->
+				<!-- USER BILLING -->
+			<template if:true={showBillingPage}>
+				<c-lwc-show-billing-data reservations={reservations}></c-lwc-show-billing-data>
+            </template>
+				<!-- /USER BILLING -->
+			</div>
+		</template>
+	</template>
 </template>

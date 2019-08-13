@@ -47,6 +47,18 @@
             ],
             "c/pubsub": [
                 "pubsub/pubsub.js"
+            ],
+            "c/lwcUserMenuUserData": [
+                "lwcUserMenuUserData/lwcUserMenuUserData.js"
+            ],
+            "c/lwcUserMenuReservations": [
+                "lwcUserMenuReservations/lwcUserMenuReservations.js"
+            ],
+            "c/lwcUserMenuHotelServices": [
+                "lwcUserMenuHotelServices/lwcUserMenuHotelServices.js"
+            ],
+            "c/lwcShowBillingData": [
+                "lwcShowBillingData/lwcShowBillingData.js"
             ]
         }
     },

@@ -3,17 +3,17 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/lwcBookingSummary": [
+                "lwcBookingSummary/lwcBookingSummary.js"
+            ],
+            "c/lwcFilterBar": [
+                "lwcFilterBar/lwcFilterBar.js"
+            ],
+            "c/lwcGuestBooking": [
+                "lwcGuestBooking/lwcGuestBooking.js"
+            ],
             "c/lwcHotelDropdownList": [
                 "lwcHotelDropdownList/lwcHotelDropdownList.js"
-            ],
-            "c/lwcSearchHotels": [
-                "lwcSearchHotels/lwcSearchHotels.js"
-            ],
-            "c/lwcMainMenu": [
-                "lwcMainMenu/lwcMainMenu.js"
-            ],
-            "c/lwcSearchRooms": [
-                "lwcSearchRooms/lwcSearchRooms.js"
             ],
             "c/lwcHotelFilterBar": [
                 "lwcHotelFilterBar/lwcHotelFilterBar.js"
@@ -21,14 +21,17 @@
             "c/lwcHotelRoomsList": [
                 "lwcHotelRoomsList/lwcHotelRoomsList.js"
             ],
-            "c/lwcFilterBar": [
-                "lwcFilterBar/lwcFilterBar.js"
+            "c/lwcMainMenu": [
+                "lwcMainMenu/lwcMainMenu.js"
             ],
-            "c/lwcBookingSummary": [
-                "lwcBookingSummary/lwcBookingSummary.js"
+            "c/lwcSearchHotels": [
+                "lwcSearchHotels/lwcSearchHotels.js"
             ],
-            "c/lwcGuestBooking": [
-                "lwcGuestBooking/lwcGuestBooking.js"
+            "c/lwcSearchRooms": [
+                "lwcSearchRooms/lwcSearchRooms.js"
+            ],
+            "c/lwcSummaryPopup": [
+                "lwcSummaryPopup/lwcSummaryPopup.js"
             ]
         }
     },

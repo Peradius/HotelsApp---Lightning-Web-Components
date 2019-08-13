@@ -6,9 +6,9 @@
         <c-lwc-search-rooms onroomselected={handleRoomSelection} hotel-id={hotel.Id}></c-lwc-search-rooms>
     </div>
     <div if:true={pageThreeOpened}>
-        <c-lwc-booking-summary hotel={hotel} room={room}></c-lwc-booking-summary>
+        <c-lwc-booking-summary onshowsummarypopup={handleShowSummaryPopup} hotel={hotel} room={room}></c-lwc-booking-summary>
     </div>
-    <!-- <div if:true={pageFourOpened}>
-        <c-lwc-search-hotels></c-lwc-search-hotels>
-    </div> -->
+    <div if:true={pageFourOpened}>
+        <c-lwc-summary-popup hotel={hotel} room={room} guest={guest} check-in={checkIn} check-out={checkOut} total-price={totalPrice}></c-lwc-summary-popup>
+    </div>
 </template>

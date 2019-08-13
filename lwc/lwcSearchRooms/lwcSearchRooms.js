@@ -9,6 +9,7 @@ export default class LwcSearchRooms extends LightningElement {
     @track peopleInRoom = 1;
     @track maxPrice = null;
     @track isExecutive = null;
+    @track totalDays;
     
     @track errorMessage = '';
     @track isDateError = false;
@@ -77,15 +78,21 @@ export default class LwcSearchRooms extends LightningElement {
         }
         
         if(this.isDateError === false && this.peopleInRoom != null) {
-            this.totalDays = this.checkOutDate - this.checkInDate;
+            // Calculate num of days of guest's stay
+            let startDate = new Date(this.checkInDate); 
+            let endDate = new Date(this.checkOutDate);
+            this.totalDays = (endDate - startDate) / 8.64e7;
         }
     }
 
     sendRoomToMenu(event) {
-        let selectedRoom = event.detail;
-
         const roomEvent = new CustomEvent('roomselected', {
-            detail: selectedRoom
+            detail: {
+                selectedRoom : event.detail.selectedRoom,
+                checkInDate : event.detail.checkInDate,
+                checkOutDate : event.detail.checkOutDate,
+                totalPrice : event.detail.totalPrice
+            }
         });
         this.dispatchEvent(roomEvent);
     }

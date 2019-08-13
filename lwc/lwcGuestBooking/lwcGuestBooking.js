@@ -10,9 +10,10 @@ import GUEST_EMAIL from '@salesforce/schema/Guest__c.Email__c';
 export default class LwcGuestBooking extends LightningElement {
     guestObject = GUEST_OBJECT;
     guestFields = [GUEST_FIRST_NAME, GUEST_LAST_NAME, GUEST_PHONE, GUEST_EMAIL];
+    
     email;
     @track emailVal;
-    guest;
+    @track guest;
 
     @track hasAccountToggle = false;
     @track emailNotFound = false;
@@ -28,6 +29,7 @@ export default class LwcGuestBooking extends LightningElement {
             console.log("Email found!");
             this.guest = data;
             this.emailNotFound = false;
+            this.showSummaryPopup();
         }
     }
 
@@ -39,14 +41,22 @@ export default class LwcGuestBooking extends LightningElement {
         this.hasAccountToggle = !this.hasAccountToggle;
     }
 
-    submitEmail(event) {
+    submitEmail() {
         this.emailVal = this.email;
-        console.log(this.email);
-        console.log(this.wiredEmail);
     }
 
-    submitNewGuest() {
+    submitNewGuest(event) {
         console.log('Guest inserted');
+        let guest = event.target.value;
+        console.log(guest);
+        console.log(guest.First_Name__c);
+    }
+
+    showSummaryPopup() {
+        const summaryPopupEvent = new CustomEvent('showsummarypopup', {
+            detail: this.guest
+        });
+        this.dispatchEvent(summaryPopupEvent);
     }
 
 }

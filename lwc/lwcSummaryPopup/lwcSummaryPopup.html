@@ -1,0 +1,104 @@
+<template>
+    <div class="slds-scope">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+            <div class="slds-modal__container">
+                                                <!-- MODAL HEADER -->
+                <div class="slds-scrollable_y" >
+                    <div class="slds-modal__content slds-p-around_small slds-grid">
+                        <div class="slds-media slds-col slds-has-flexi-truncate slds-no-space slds-grow slds-box slds-theme_shade">
+                            <div class="slds-media__figure">
+                                <lightning-icon icon-name="standard:home" alternativetext="Booking Summary" size="large"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <p class="slds-text-title_caps slds-line-height_reset">{hotel.Name} | {room.Name}</p>
+                                <h1 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate">Confirm booking</h1>
+                                <h2 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate">{checkIn} - {checkOut}</h2>
+                            </div>
+                        </div>
+                    </div>
+                                                <!--/ MODAL HEADER -->
+
+                                                <!-- HOTEL INFO -->
+                    <div class="slds-modal__content slds-p-around_medium slds-grid">
+                        <div class="slds-grow slds-box slds-theme_shade" >
+                            <p class="slds-text-heading_medium">
+                                Hotel Info
+                            </p>
+                            <p class="slds-text-body_small">
+                                Name:
+                                <lightning-formatted-text value={hotel.Name} ></lightning-formatted-text>
+                            </p>
+                            <p class="slds-text-body_small">
+                                Address: {hotel.Address__c}, {hotel.City__c}
+                            </p>
+                            <p class="slds-text-body_small">
+                                <lightning-formatted-text value={Phone}></lightning-formatted-text>
+                                <lightning-formatted-phone value={hotel.Phone__c}></lightning-formatted-phone>
+                            </p>
+                            <p class="slds-text-body_small">
+                                E-mail:
+                                <lightning-formatted-email value={hotel.Email__c}></lightning-formatted-email>
+                            </p>
+                            <p class="slds-text-body_small">
+                                Website: 
+                                <lightning-formatted-text value={hotel.Website__c}></lightning-formatted-text>
+                            </p>
+                        </div>  
+                    </div>
+                                                <!-- /HOTEL INFO -->
+                                                <!-- ROOM INFO -->
+                    <div class="slds-modal__content slds-p-around_small slds-grid">
+                        <div class="slds-truncate slds-grow slds-box slds-theme_shade" >
+                            <p class="slds-text-heading_medium">
+                                Room Info
+                            </p>
+                            <p class="slds-text-body_small">
+                                Room no.:
+                                <lightning-formatted-text value={room.Name}></lightning-formatted-text>
+                            </p>
+                            <p class="slds-text-body_small">
+                                <lightning-formatted-text value="Price for night: "></lightning-formatted-text>
+                                <lightning-formatted-number value={room.Price_for_Night__c} currency-code="EUR" minimum-fraction-digits="2" maximum-fraction-digits="2" format-style="currency"></lightning-formatted-number>
+                            </p>
+                            <p class="slds-text-body_small">
+                                Single beds:
+                                <lightning-formatted-text value={room.Single_Beds__c}></lightning-formatted-text>
+                            </p>
+                            <p class="slds-text-body_small">
+                                Double beds:
+                                <lightning-formatted-text value={room.Double_Beds__c}></lightning-formatted-text>
+                            </p>   
+                        </div>  
+                    </div>
+                                                    <!-- /ROOM INFO -->
+                                                    <!-- USER INFO -->
+                    <div class="slds-modal__content slds-p-around_medium slds-grid">
+                        <div class="slds-no-space slds-grow slds-box slds-theme_shade" >
+                            <p class="slds-text-heading_medium">
+                                User Info
+                            </p>
+                            <p class="slds-text-body_small">
+                                Full Name:
+                                {guest.First_Name__c}, {guest.Last_Name__c}
+                            </p>
+                            <p class="slds-text-body_small">
+                                Phone:
+                                <lightning-formatted-text value={guest.Phone__c}></lightning-formatted-text>
+                            </p>
+                            <p class="slds-text-body_small">
+                                Email:
+                                <lightning-formatted-text value={guest.Email__c}></lightning-formatted-text>
+                            </p>
+                        </div>  
+                    </div>
+                </div>
+                                                <!-- /USER INFO -->
+
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={cancelBooking}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={confirmBooking}>Confirm</button>
+                </footer>
+            </div>
+        </section>
+    </div> 
+</template>

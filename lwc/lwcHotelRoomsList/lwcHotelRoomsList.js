@@ -9,6 +9,7 @@ export default class LwcHotelRoomsList extends LightningElement {
     @api peopleInRoom;
     @api maxPrice = null;
     @api isExecutive = null;
+    @api totalDays;
 
     @track rooms = [];
 
@@ -27,9 +28,19 @@ export default class LwcHotelRoomsList extends LightningElement {
 
     bookThisRoom(event) {
         let selectedRoom = event.target.value;
+        console.log('selected room name: ' + selectedRoom.Name);
+        console.log('and its price: ' + selectedRoom.Price_for_Night__c);
+
+        let totalPrice = this.totalDays * selectedRoom.Price_for_Night__c;
+        console.log('Total price: ' + totalPrice);
 
         const roomEvent = new CustomEvent('roomselected', {
-            detail: selectedRoom
+            detail: {
+                selectedRoom : selectedRoom,
+                checkInDate : this.checkInDate,
+                checkOutDate : this.checkOutDate,
+                totalPrice : totalPrice
+            }
         });
         this.dispatchEvent(roomEvent);
     }

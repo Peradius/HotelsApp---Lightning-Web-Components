@@ -14,7 +14,7 @@
 				<div class="slds-m-around_medium">
 					<div class="slds-grid">
 						<div class="slds-col slds-box slds-size--1-of-3 slds-theme_shade">
-							<c-lwc-user-menu-user-data guest={guest}></c-lwc-user-menu-user-data>
+							<c-lwc-user-menu-user-data onshowbilling={showBilling} guest={guest}></c-lwc-user-menu-user-data>
 						</div>
 						<div class="slds-col slds-box slds-size--2-of-3 slds-theme_shade">
 							<c-lwc-user-menu-reservations reservations={reservations}></c-lwc-user-menu-reservations>
@@ -30,7 +30,7 @@
 				<!-- USER ACCOUNT DETAILS -->
 				<!-- USER BILLING -->
 			<template if:true={showBillingPage}>
-				<c-lwc-show-billing-data reservations={reservations}></c-lwc-show-billing-data>
+				<c-lwc-show-billing-data onclosebilling={closeBilling} reservations={reservations}></c-lwc-show-billing-data>
             </template>
 				<!-- /USER BILLING -->
 		</div>		 

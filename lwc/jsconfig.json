@@ -62,6 +62,12 @@
             ],
             "c/lwcChangeUserDataModal": [
                 "lwcChangeUserDataModal/lwcChangeUserDataModal.js"
+            ],
+            "c/lwcShowBillingDataBillings": [
+                "lwcShowBillingDataBillings/lwcShowBillingDataBillings.js"
+            ],
+            "c/lwcShowBillingDataReservations": [
+                "lwcShowBillingDataReservations/lwcShowBillingDataReservations.js"
             ]
         }
     },

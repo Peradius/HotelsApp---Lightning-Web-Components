@@ -28,4 +28,12 @@ export default class LwcUserMenu extends LightningElement {
             console.log(error);
         })
     }
+
+    showBilling() {
+        this.showBillingPage = true;
+    }
+
+    closeBilling() {
+        this.showBillingPage = false;
+    }
 }

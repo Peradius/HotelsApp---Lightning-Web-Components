@@ -10,7 +10,8 @@ export default class LwcUserMenuUserData extends LightningElement {
     }
 
     showBilling() {
-        console.log('show billing');
+        const showBillingEvent = new CustomEvent('showbilling');
+        this.dispatchEvent(showBillingEvent);
     }
 
     closeModal() {

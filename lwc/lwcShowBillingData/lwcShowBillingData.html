@@ -1,3 +1,20 @@
 <template>
-    
+    <div class="slds-m-around_medium">
+		<div class="slds-grid">
+			<div class="slds-col slds-box slds-grid slds-theme_shade">
+											<!-- RESERVATIONS -->
+				<c-lwc-show-billing-data-reservations onshowreservationfinances={handleReservationFinances} onclosebilling={closeBilling} reservations={reservations}> </c-lwc-show-billing-data-reservations>
+											<!-- /RESERVATIONS -->
+
+											<!-- BILLINGS -->
+				<c-lwc-show-billing-data-billings 	billings={billings}
+											        reservation={reservation}
+											        reservation-total-billing={reservationTotalBilling} 
+                                                    show-total-cost={showTotalCost}>
+                </c-lwc-show-billing-data-billings>
+                                            
+											<!-- /BILLINGS -->
+			</div>
+		</div>
+	</div>
 </template>

@@ -6,6 +6,8 @@ export default class LwcUserMenu extends LightningElement {
     @track guest;
     @track loggedIn = false;
     @track reservations;
+    @track reservationId;
+    @track services = null;
     @track showBillingPage = false;
     @track showReservationDetails = false;
 
@@ -27,6 +29,14 @@ export default class LwcUserMenu extends LightningElement {
             console.log('Error retrieving reservations!');
             console.log(error);
         })
+    }
+
+    handleShowReservationServices(event) {
+        this.reservationId = event.detail.reservationId;
+        this.services = event.detail.services;
+        console.log('from event - id : ' +this.reservationId);
+        console.log('from event - services size : ' +this.services.length);
+        this.showReservationDetails = true;
     }
 
     showBilling() {

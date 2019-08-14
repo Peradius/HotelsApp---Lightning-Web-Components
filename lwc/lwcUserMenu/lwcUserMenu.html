@@ -17,12 +17,12 @@
 							<c-lwc-user-menu-user-data onshowbilling={showBilling} guest={guest}></c-lwc-user-menu-user-data>
 						</div>
 						<div class="slds-col slds-box slds-size--2-of-3 slds-theme_shade">
-							<c-lwc-user-menu-reservations reservations={reservations}></c-lwc-user-menu-reservations>
+							<c-lwc-user-menu-reservations onshowreservationservices={handleShowReservationServices} reservations={reservations}></c-lwc-user-menu-reservations>
 						</div>
 					</div>
 																					<!-- RESERVATION DETAILS -->
 					<template if:true={showReservationDetails}>
-						<c-lwc-user-menu-hotel-services></c-lwc-user-menu-hotel-services>
+						<c-lwc-user-menu-hotel-services reservation-id={reservationId} services={services}></c-lwc-user-menu-hotel-services>
                     </template>
 																					<!-- /RESERVATION DETAILS -->
 				</div>

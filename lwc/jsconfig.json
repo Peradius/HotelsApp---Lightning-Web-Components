@@ -6,17 +6,26 @@
             "c/lwcBookingSummary": [
                 "lwcBookingSummary/lwcBookingSummary.js"
             ],
+            "c/lwcChangeUserDataModal": [
+                "lwcChangeUserDataModal/lwcChangeUserDataModal.js"
+            ],
             "c/lwcFilterBar": [
                 "lwcFilterBar/lwcFilterBar.js"
             ],
             "c/lwcGuestBooking": [
                 "lwcGuestBooking/lwcGuestBooking.js"
             ],
+            "c/lwcHotelApplication": [
+                "lwcHotelApplication/lwcHotelApplication.js"
+            ],
             "c/lwcHotelDropdownList": [
                 "lwcHotelDropdownList/lwcHotelDropdownList.js"
             ],
             "c/lwcHotelFilterBar": [
                 "lwcHotelFilterBar/lwcHotelFilterBar.js"
+            ],
+            "c/lwcHotelHeader": [
+                "lwcHotelHeader/lwcHotelHeader.js"
             ],
             "c/lwcHotelRoomsList": [
                 "lwcHotelRoomsList/lwcHotelRoomsList.js"
@@ -30,44 +39,35 @@
             "c/lwcSearchRooms": [
                 "lwcSearchRooms/lwcSearchRooms.js"
             ],
-            "c/lwcSummaryPopup": [
-                "lwcSummaryPopup/lwcSummaryPopup.js"
-            ],
-            "c/lwcHotelApplication": [
-                "lwcHotelApplication/lwcHotelApplication.js"
-            ],
-            "c/lwcUserMenu": [
-                "lwcUserMenu/lwcUserMenu.js"
-            ],
-            "c/lwcHotelHeader": [
-                "lwcHotelHeader/lwcHotelHeader.js"
-            ],
-            "c/lwcUserInteractions": [
-                "lwcUserInteractions/lwcUserInteractions.js"
-            ],
-            "c/pubsub": [
-                "pubsub/pubsub.js"
-            ],
-            "c/lwcUserMenuUserData": [
-                "lwcUserMenuUserData/lwcUserMenuUserData.js"
-            ],
-            "c/lwcUserMenuReservations": [
-                "lwcUserMenuReservations/lwcUserMenuReservations.js"
-            ],
-            "c/lwcUserMenuHotelServices": [
-                "lwcUserMenuHotelServices/lwcUserMenuHotelServices.js"
-            ],
             "c/lwcShowBillingData": [
                 "lwcShowBillingData/lwcShowBillingData.js"
-            ],
-            "c/lwcChangeUserDataModal": [
-                "lwcChangeUserDataModal/lwcChangeUserDataModal.js"
             ],
             "c/lwcShowBillingDataBillings": [
                 "lwcShowBillingDataBillings/lwcShowBillingDataBillings.js"
             ],
             "c/lwcShowBillingDataReservations": [
                 "lwcShowBillingDataReservations/lwcShowBillingDataReservations.js"
+            ],
+            "c/lwcSummaryPopup": [
+                "lwcSummaryPopup/lwcSummaryPopup.js"
+            ],
+            "c/lwcUserInteractions": [
+                "lwcUserInteractions/lwcUserInteractions.js"
+            ],
+            "c/lwcUserMenu": [
+                "lwcUserMenu/lwcUserMenu.js"
+            ],
+            "c/lwcUserMenuHotelServices": [
+                "lwcUserMenuHotelServices/lwcUserMenuHotelServices.js"
+            ],
+            "c/lwcUserMenuReservations": [
+                "lwcUserMenuReservations/lwcUserMenuReservations.js"
+            ],
+            "c/lwcUserMenuUserData": [
+                "lwcUserMenuUserData/lwcUserMenuUserData.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
             ]
         }
     },

@@ -1,3 +1,29 @@
 <template>
-    
+    <div class="slds-size_1-of-1">
+        <div class="slds-p-around_small slds-theme_shade">
+            <p class="slds-text-heading_large">
+                Hotel's services
+            </p>
+            <hr></hr>
+            <template for:each={services} for:item="service">
+                <div key={service.Id} class="slds-grid">
+                    <div class="slds-box slds-size_1-of-1">
+                        <p class="slds-text-heading_medium">-
+                            <lightning-formatted-text value={service.Name}></lightning-formatted-text>
+                        </p>
+                        <p class="slds-text-body_regular">
+                            Price:
+                            <lightning-formatted-text value={service.Price__c}></lightning-formatted-text>
+                        </p>
+                        <p class="slds-text-body_small">
+                            <lightning-formatted-text value={service.Description__c}></lightning-formatted-text>
+                        </p>
+                        <p>
+                            <lightning-button label="Order" title="Buy service" onclick={orderClicked} value={service}></lightning-button>
+                        </p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
 </template>
